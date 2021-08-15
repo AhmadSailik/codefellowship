@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <meta charset="UTF-8">
+    <title>CodeFellow</title>
+</head>
+<body>
+<div style="margin-top:2rem;">
+  <form method="post" action="#" th:action="@{/signup}" class="row g-3 needs-validation"style="background-color:#812929;">
+    <div class="col-md-4">
+      <input type="text" name="username"placeholder="User Name" class="form-control" required>
+    </div>
+    <div class="col-md-4">
+      <input type="password" name="password"placeholder="Password" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="firstName"placeholder="First Name" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="lastName"placeholder="Last Name" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="sDate1"placeholder="Date Of Birth" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="bio"placeholder="Bio" class="form-control" required>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-secondary" type="submit">Submit form</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
