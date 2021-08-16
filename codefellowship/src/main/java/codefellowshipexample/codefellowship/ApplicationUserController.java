@@ -51,8 +51,8 @@ public class ApplicationUserController {
 
     @RequestMapping("/signup")
     @PostMapping("/signup")
-    public RedirectView signUp(String username,String password,String firstName,String lastName,String sDate1,String bio){
-        ApplicationUser applicationUser=new ApplicationUser(username,bCryptPasswordEncoder.encode(password),firstName,lastName,sDate1,bio);
+    public RedirectView signUp(String username,String password,String firstName,String lastName,String birthday,String bio){
+        ApplicationUser applicationUser=new ApplicationUser(username,bCryptPasswordEncoder.encode(password),firstName,lastName,birthday,bio);
         applicationUserRepository.save(applicationUser);
         return new RedirectView("/login");
     }
