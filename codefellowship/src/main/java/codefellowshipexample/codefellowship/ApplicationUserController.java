@@ -9,6 +9,8 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.persistence.GeneratedValue;
 import java.security.Principal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class ApplicationUserController {
@@ -59,9 +61,13 @@ public class ApplicationUserController {
     @RequestMapping("/addPost")
     @PostMapping("/addPost")
     public RedirectView newPost(String body,Principal principal){
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        Date date = new Date(System.currentTimeMillis());
+        String dateTime=formatter.format(date);
+
         int idUser=applicationUserRepository.findByUsername(principal.getName()).getId();
         ApplicationUser addingPost=applicationUserRepository.findById(idUser).get();
-        Post post=new Post(body,addingPost);
+        Post post=new Post(body,dateTime,addingPost);
         postRepository.save(post);
         return new RedirectView("/profile");
     }

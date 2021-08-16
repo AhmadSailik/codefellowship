@@ -36,6 +36,7 @@
         <hr>
     </div>
     <div th:each="posts:${post}"style="padding-left:2rem;padding-right:2rem;padding-top:.5rem;">
+        <p th:text="${posts.dataTime}"></p>
         <p th:text="${posts.body}"style="font-size:2rem;"></p>
         <hr>
     </div>

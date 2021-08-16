@@ -8,6 +8,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String body;
+    private String dataTime;
     @ManyToOne
     private ApplicationUser addingPost;
 
@@ -15,9 +16,18 @@ public class Post {
 
     }
 
-    public Post(String body, ApplicationUser addingPost) {
+    public Post(String body,String dataTime, ApplicationUser addingPost) {
         this.body = body;
+        this.dataTime=dataTime;
         this.addingPost = addingPost;
+    }
+
+    public String getDataTime() {
+        return dataTime;
+    }
+
+    public void setDataTime(String dataTime) {
+        this.dataTime = dataTime;
     }
 
     public int getId() {
