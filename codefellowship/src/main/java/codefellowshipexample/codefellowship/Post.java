@@ -1,6 +1,7 @@
 package codefellowshipexample.codefellowship;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -11,6 +12,8 @@ public class Post {
     private String dataTime;
     @ManyToOne
     private ApplicationUser addingPost;
+
+
 
     public Post(){
 

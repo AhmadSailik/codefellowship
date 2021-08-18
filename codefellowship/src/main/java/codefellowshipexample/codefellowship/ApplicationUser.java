@@ -25,7 +25,8 @@ public class ApplicationUser implements UserDetails {
     private String bio;
     @OneToMany(mappedBy = "addingPost")
     private List<Post>posts;
-
+    @OneToMany(mappedBy = "addingUser")
+    private List<Feed>feeds;
     public ApplicationUser() {
     }
 
